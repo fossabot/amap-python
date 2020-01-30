@@ -9,7 +9,7 @@ from shutil import copyfile
 
 from micrometa.micrometa import SUPPORTED_METADATA_TYPES
 from imlib.general.system import ensure_directory_exists
-from imlib.general.misc import check_positive_int, check_positive_float
+from imlib.general.numerical import check_positive_int, check_positive_float
 from imlib.image.metadata import define_pixel_sizes
 from imlib.general.config import get_config_obj
 
