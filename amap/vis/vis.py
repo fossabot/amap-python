@@ -233,7 +233,7 @@ def display_registration(
     :param tuple image_scales: Scaling of images from annotations -> data
     :param memory: Load data into memory
     """
-    viewer.add_labels(
+    labels = viewer.add_labels(
         prepare_load_nii(atlas, memory=memory),
         name="Annotations",
         opacity=0.2,
@@ -246,7 +246,7 @@ def display_registration(
         colormap=("label_red", label_red),
         scale=image_scales,
     )
-
+    return labels
 
 def main():
     print("Starting amap viewer")
@@ -282,13 +282,26 @@ def main():
                         f"directory and that amap has completed. "
                     )
 
-            display_registration(
+            labels = display_registration(
                 v,
                 paths.registered_atlas_path,
                 paths.boundaries_file_path,
                 image_scales,
                 memory=args.memory,
             )
+
+            @labels.mouse_move_callbacks.append
+            def get_connected_component_shape(layer, event):
+                val = layer.get_value()
+                if val != 0 and val is not None:
+                    # region = get_location(val)
+                    region = "Striatum"
+                    msg = f"{region}"
+                else:
+                    msg = "No label here!"
+                layer.help = msg
+
+
 
         else:
             raise FileNotFoundError(
