@@ -11,6 +11,13 @@ from imlib.general.system import get_sorted_file_paths, get_text_lines
 from amap.utils.paths import Paths
 from imlib.general.config import get_config_obj
 
+
+###
+from cellfinder.summarise.tools import atlas_value_to_name
+from cellfinder.summarise.structures.structures_tree import load_structures_as_df
+from cellfinder.tools.source_files import get_structures_path
+
+####
 label_red = Colormap([[0.0, 0.0, 0.0, 0.0], [1.0, 1.0, 1.0, 1.0]])
 
 
@@ -248,9 +255,13 @@ def display_registration(
     )
     return labels
 
+
 def main():
     print("Starting amap viewer")
     args = parser().parse_args()
+
+    structures_path = get_structures_path()
+    structures_df = load_structures_as_df(structures_path)
 
     if not args.memory:
         print(
@@ -295,7 +306,8 @@ def main():
                 val = layer.get_value()
                 if val != 0 and val is not None:
                     # region = get_location(val)
-                    region = "Striatum"
+                    # region = "Striatum"
+                    region = atlas_value_to_name(val, structures_df)
                     msg = f"{region}"
                 else:
                     msg = "No label here!"
