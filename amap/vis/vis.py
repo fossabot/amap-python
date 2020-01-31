@@ -7,17 +7,12 @@ from pathlib import Path
 from vispy.color import Colormap
 from brainio import brainio
 from imlib.general.system import get_sorted_file_paths, get_text_lines
-
-from amap.utils.paths import Paths
 from imlib.general.config import get_config_obj
+from imlib.IO.structures import load_structures_as_df
+from imlib.anatomy.structures.structures_tree import atlas_value_to_name
+from amap.utils.paths import Paths
+from amap.tools.source_files import get_structures_path
 
-
-###
-from cellfinder.summarise.tools import atlas_value_to_name
-from cellfinder.summarise.structures.structures_tree import load_structures_as_df
-from cellfinder.tools.source_files import get_structures_path
-
-####
 label_red = Colormap([[0.0, 0.0, 0.0, 0.0], [1.0, 1.0, 1.0, 1.0]])
 
 
