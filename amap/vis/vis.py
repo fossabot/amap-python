@@ -9,7 +9,10 @@ from brainio import brainio
 from imlib.general.system import get_sorted_file_paths, get_text_lines
 from imlib.general.config import get_config_obj
 from imlib.IO.structures import load_structures_as_df
-from imlib.anatomy.structures.structures_tree import atlas_value_to_name
+from imlib.anatomy.structures.structures_tree import (
+    atlas_value_to_name,
+    UnknownAtlasValue,
+)
 from amap.utils.paths import Paths
 from amap.tools.source_files import get_structures_path
 
@@ -235,17 +238,19 @@ def display_registration(
     :param tuple image_scales: Scaling of images from annotations -> data
     :param memory: Load data into memory
     """
-    labels = viewer.add_labels(
-        prepare_load_nii(atlas, memory=memory),
-        name="Annotations",
-        opacity=0.2,
-        scale=image_scales,
-    )
     viewer.add_image(
         prepare_load_nii(boundaries, memory=memory),
         name="Outlines",
         contrast_limits=[0, 1],
         colormap=("label_red", label_red),
+        scale=image_scales,
+    )
+
+    # labels added last so on top
+    labels = viewer.add_labels(
+        prepare_load_nii(atlas, memory=memory),
+        name="Annotations",
+        opacity=0.2,
         scale=image_scales,
     )
     return labels
@@ -300,15 +305,14 @@ def main():
             def get_connected_component_shape(layer, event):
                 val = layer.get_value()
                 if val != 0 and val is not None:
-                    # region = get_location(val)
-                    # region = "Striatum"
-                    region = atlas_value_to_name(val, structures_df)
-                    msg = f"{region}"
+                    try:
+                        region = atlas_value_to_name(val, structures_df)
+                        msg = f"{region}"
+                    except UnknownAtlasValue:
+                        msg = "Unknown region"
                 else:
                     msg = "No label here!"
                 layer.help = msg
-
-
 
         else:
             raise FileNotFoundError(
