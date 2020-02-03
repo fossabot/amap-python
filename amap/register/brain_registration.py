@@ -46,39 +46,6 @@ class BrainRegistration(object):
         self.atlas_img_path = paths.annotations
         self.hemispheres_img_path = paths.hemispheres
 
-    def sanitise_inputs(self):
-        """
-        Validates the inputs paths (dataset, atlas, brain of atlas) to
-        check that they are the correct image type and that they exist.
-
-        :return:
-        :raises RegistrationError: If the conditions are not met
-        """
-        img_paths_var_names = (
-            "dataset_img_path",
-            "atlas_img_path",
-            "brain_of_atlas_img_path",
-        )
-        for img_path_var_name in img_paths_var_names:
-            img_path = getattr(self, img_path_var_name)
-            if not os.path.exists(img_path):
-                sys.exit(
-                    "Cannot perform registration, image {} "
-                    "not found".format(img_path)
-                )
-            if not img_path.endswith(".nii"):
-                if img_path.endswith((".tiff", ".tif")):
-                    nii_path = "{}{}".format(
-                        os.path.splitext(img_path)[0], ".nii"
-                    )
-                    brainio.tiff_to_nii(img_path, nii_path)
-                    setattr(self, img_path_var_name, nii_path)
-                else:
-                    raise RegistrationError(
-                        "Cannot perform registration, image {} "
-                        "not in supported format".format(img_path)
-                    )
-
     def _prepare_openmp_thread_flag(self):
         self.openmp_flag = "-omp {}".format(self.n_processes)
 
