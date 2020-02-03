@@ -1,8 +1,13 @@
+[![Python Version](https://img.shields.io/pypi/pyversions/amap.svg)](https://python.org)
+[![PyPI](https://img.shields.io/pypi/v/amap.svg)](https://pypi.org/project/camap)
+[![Wheel](https://img.shields.io/pypi/wheel/amap.svg)](https://pypi.org/project/amap)
+[![Development Status](https://img.shields.io/pypi/status/amap.svg)](https://github.com/SainsburyWellcomeCentre/amap-python)
 [![Travis](https://img.shields.io/travis/com/SainsburyWellcomeCentre/amap-python?label=Travis%20CI)](
     https://travis-ci.com/SainsburyWellcomeCentre/amap-python)
 [![Coverage Status](https://coveralls.io/repos/github/SainsburyWellcomeCentre/amap-python/badge.svg?branch=master)](https://coveralls.io/github/SainsburyWellcomeCentre/amap-python?branch=master)
-[![DOI](https://zenodo.org/badge/225904061.svg)](https://zenodo.org/badge/latestdoi/225904061)
 [![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=SainsburyWellcomeCentre/amap-python)](https://dependabot.com)
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/python/black)
+[![DOI](https://zenodo.org/badge/225904061.svg)](https://zenodo.org/badge/latestdoi/225904061)
 
 
 # amap-python
