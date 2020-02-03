@@ -7,19 +7,16 @@ default_atlas_name = "brain.nii"
 
 # allen_2017 (default) and allen_2017_10um are the same
 atlas_urls = {
-    "allen_2017": "https://gin.g-node.org/cellfinder/atlas/raw/master/allen_2017_10um.tar.gz",
     "allen_2017_10um": "https://gin.g-node.org/cellfinder/atlas/raw/master/allen_2017_10um.tar.gz",
     "allen_2017_100um": "https://gin.g-node.org/cellfinder/atlas/raw/master/allen_2017_100um.tar.gz",
 }
 
 download_requirements_gb = {
-    "allen_2017": 1.8,
     "allen_2017_10um": 1.8,
     "allen_2017_100um": 0.003,
 }
 
 extract_requirements_gb = {
-    "allen_2017": 11.5,
     "allen_2017_10um": 11.5,
     "allen_2017_100um": 0.015,
 }

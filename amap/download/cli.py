@@ -47,7 +47,7 @@ def atlas_parser(parser):
         "--atlas",
         dest="atlas",
         type=str,
-        default="allen_2017",
+        default="allen_2017_10um",
         help="The atlas to use",
     )
     return parser
