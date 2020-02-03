@@ -1,5 +1,5 @@
-[![Python Version](https://img.shields.io/pypi/pyversions/amap.svg)](https://python.org)
-[![PyPI](https://img.shields.io/pypi/v/amap.svg)](https://pypi.org/project/camap)
+[![Python Version](https://img.shields.io/pypi/pyversions/amap.svg)](https://pypi.org/project/amap)
+[![PyPI](https://img.shields.io/pypi/v/amap.svg)](https://pypi.org/project/amap)
 [![Wheel](https://img.shields.io/pypi/wheel/amap.svg)](https://pypi.org/project/amap)
 [![Development Status](https://img.shields.io/pypi/status/amap.svg)](https://github.com/SainsburyWellcomeCentre/amap-python)
 [![Travis](https://img.shields.io/travis/com/SainsburyWellcomeCentre/amap-python?label=Travis%20CI)](
