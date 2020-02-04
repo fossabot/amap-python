@@ -8,7 +8,7 @@ The module to handle all the registration options and program binaries
 
 from amap.config.atlas import Atlas
 from imlib.general.config import get_config_obj
-from amap.tools.source_files import get_niftyreg_binaries
+from imlib.source.niftyreg_binaries import get_niftyreg_binaries, get_binary
 
 
 class RegistrationParams:
@@ -172,7 +172,6 @@ class RegistrationParams:
         :return: The program path
         :rtype: str
         """
-        from amap.config.config import get_binary
 
         program_names = {
             "affine": "reg_aladin",

@@ -19,10 +19,6 @@ def source_custom_config():
     return resource_filename("amap", "amap.conf.custom")
 
 
-def get_niftyreg_binaries():
-    return resource_filename("amap", "bin/nifty_reg")
-
-
 def get_structures_path(config=None):
     if config is None:
         config = source_custom_config()
