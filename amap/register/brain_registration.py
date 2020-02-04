@@ -5,11 +5,8 @@ brain_registration
 The module to actually start the registration
 """
 
-import os
-import sys
-import logging
 
-from brainio import brainio
+import logging
 
 
 from imlib.general.system import (
