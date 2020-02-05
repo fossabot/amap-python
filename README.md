@@ -3,6 +3,7 @@
 [![Coverage Status](https://coveralls.io/repos/github/SainsburyWellcomeCentre/amap-python/badge.svg?branch=master)](https://coveralls.io/github/SainsburyWellcomeCentre/amap-python?branch=master)
 [![DOI](https://zenodo.org/badge/225904061.svg)](https://zenodo.org/badge/latestdoi/225904061)
 [![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=SainsburyWellcomeCentre/amap-python)](https://dependabot.com)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fadamltyson%2Famap-python.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fadamltyson%2Famap-python?ref=badge_shield)
 
 
 # amap-python
@@ -103,3 +104,7 @@ N.B. If you have a high-resolution monitor, the scaling of the viewer may not wo
 this is a [known napari issue](https://github.com/napari/napari/issues/367).
 
 ![amap_viewer](resources/amap_vis.gif)
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fadamltyson%2Famap-python.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fadamltyson%2Famap-python?ref=badge_large)
